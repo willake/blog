@@ -50,7 +50,7 @@
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/myblog/css/style.css">
 
     <!-- Custom Fonts -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -91,7 +91,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">Willake</a>
+            <a class="navbar-brand" href="/myblog/">Willake</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -99,7 +99,7 @@
             <ul class="nav navbar-nav navbar-right">
                 
                     <li>
-                        <a href="/">
+                        <a href="/myblog/">
                             
                                 Home
                             
@@ -107,7 +107,7 @@
                     </li>
                 
                     <li>
-                        <a href="/about">
+                        <a href="/myblog/about">
                             
                                 About
                             
@@ -165,7 +165,7 @@
                         
 
 
-<a href="/tags/English/">#English</a>
+<a href="/myblog/tags/English/">#English</a>
 
 
                     
@@ -174,7 +174,7 @@
                     
                         
 
-<a href="/categories/note/">Note</a>
+<a href="/myblog/categories/note/">Note</a>
 
                     
                 </div>
@@ -199,9 +199,9 @@
 <h3 id="Use-‘-’-to-concatenate-multiple-strings-will-waste-the-memory-space"><a href="#Use-‘-’-to-concatenate-multiple-strings-will-waste-the-memory-space" class="headerlink" title="Use ‘+’ to concatenate multiple strings will waste the memory space."></a>Use ‘+’ to concatenate multiple strings will waste the memory space.</h3><p>We usually face the problem of concatenating multiple strings while we using C#, and what we do is adding a ‘+’ between strings. </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string msg = <span class="string">"Hello,"</span>,Name = <span class="string">"Peter"</span>;</span><br><span class="line">msg += Name;</span><br><span class="line">msg += <span class="string">". Today is "</span>;</span><br><span class="line">msg += System.DateTime.Today.ToShortDateString();</span><br></pre></td></tr></table></figure>
 <p>When we use that method, you may think it will be like this in the memory: </p>
-<img src="/2016/06/07/StudyGroup0605/string-plus.png" width="500" title="string-plus">
+<img src="/myblog/2016/06/07/StudyGroup0605/string-plus.png" width="500" title="string-plus">
 <p>Stored the data in the original location of the string. Actually, it will be like this: </p>
-<img src="/2016/06/07/StudyGroup0605/string-plus2.png" width="500" title="string-plus2">
+<img src="/myblog/2016/06/07/StudyGroup0605/string-plus2.png" width="500" title="string-plus2">
 <p>Every time we use ‘+’ to concatenating strings, the memory will assign a new space to store the string. The original string won’t be deleted and will become a trash. It is because CLR wants to save the memory space so it build a hash table system in heap. Relative to string, StringBuilder class is better. It is changeable so it won’t assign any new space. we can use it to concatenate strings. </p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">string name = <span class="string">"Peter"</span>;</span><br><span class="line">StringBuilder msg = new StringBuilder(<span class="string">"Hello, "</span>);</span><br><span class="line">msg.Append(name);</span><br><span class="line">msg.Append(<span class="string">". Today is "</span>);</span><br><span class="line">msg.Append(DateTime.Now.ToShortDateString());</span><br><span class="line">string finalMsg = msg.ToString();</span><br></pre></td></tr></table></figure>
 <h3 id="C-6-0-Interpolated-Strings"><a href="#C-6-0-Interpolated-Strings" class="headerlink" title="C# 6.0 Interpolated Strings"></a>C# 6.0 Interpolated Strings</h3><p>We used to use String.Format() function to converts the value of objects to strings and inserts them into another.</p>
