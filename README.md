@@ -1,1 +1,1 @@
-https://github.com/willake/blog
+https://willake.github.io/blog/
