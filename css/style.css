@@ -161,8 +161,8 @@ hr.small {
 }
 .intro-header {
   background-color: #808080;
-  background-attachment: fixed;
-  background-position: center;
+/*background-attachment: fixed*/
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   margin-bottom: 50px;
@@ -626,8 +626,7 @@ pre .deletion {
   color: #fff;
   text-align: center;
   border-radius: 10px;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-color: #0b2027;
   text-decoration: none;
   filter: blur(0.5px);
   filter: brightness(0.8);
